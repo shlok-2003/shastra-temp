@@ -18,7 +18,8 @@ export default {
         'Ubuntu': ['Ubuntu']
       },
       colors: {
-        'footer': "#EBEBEB"
+        'footer': "#EBEBEB",
+        'home': "#EFEFED"
       }
     },
   },

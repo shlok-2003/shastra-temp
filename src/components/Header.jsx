@@ -31,9 +31,9 @@ export default function Header() {
     const [drawer, setDrawer] = useState(false)
 
     return (
-        <header className="flex flex-row w-full px-1 sm:px-5 pt-3 pb-2 sm:justify-between">
-            <Link to="/" className="w-max flex items-center ">
-                <img src={Logo} className="inline-block h-[43px] w-[102px] sm:h-[63px] sm:w-[132px]"/>
+        <header className="absolute top-0 flex flex-row w-full px-1 sm:px-5 pt-3 pb-2 sm:justify-between">
+            <Link to="/" className="w-max flex items-center outline-none">
+                <img src={Logo} className="inline-block h-[43px] w-[86px] sm:h-[63px] sm:w-[126px]"/>
                 {/* <img src={Text} className="h-[43px] w-[63px] inline-block my-auto"/> */}        {/* If the text is need in img, then use this */}
                 <span className="text-base font-[500] my-auto mt-auto ml-1 inline-block sm:font-medium sm:text-xl md:ml-2 ">
                     <h1 className="tracking-wider">TCET's</h1>

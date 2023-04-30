@@ -8,7 +8,7 @@ import {
 } from "react-router-dom"
 
 import MainLayout from "./components/MainLayout"
-import Home from "./pages/home"
+import Home from "./pages/Home"
 import Team from "./pages/Team"
 import Events from "./pages/Events"
 import Learn from "./pages/Learn"

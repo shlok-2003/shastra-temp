@@ -1,3 +1,5 @@
+import { colors } from '@mui/material';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -14,6 +16,9 @@ export default {
     extend: {
       fontFamily: {
         'Ubuntu': ['Ubuntu']
+      },
+      colors: {
+        'footer': "#EBEBEB"
       }
     },
   },

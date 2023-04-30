@@ -1,4 +1,5 @@
 import { colors } from '@mui/material';
+import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -23,6 +24,10 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+
+  daisyui: {
+    themes: []
+  }
 }
 

@@ -6,7 +6,7 @@ import Footer from "./Footer"
 
 export default function MainLayout() {
     return (
-        <div className="relative font-Ubuntu h-screen">
+        <div className="relative font-Ubuntu h-screen" data-theme="light">
             <Header />
             <Outlet />
             <Footer />

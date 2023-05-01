@@ -5,6 +5,8 @@ import { AnimatePresence, motion, transform } from "framer-motion"
 import Logo from "../assets/home/logo.png"
 import CarouselImg from "../assets/home/carousel.jpg"
 import CarouselImg2 from "../assets/home/carousel2.jpeg"
+import CarouselImg3 from "../assets/home/carousel3.jpg"
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import { nanoid } from "nanoid"
 
@@ -77,7 +79,7 @@ export default function Home() {
     const [direction, setDirection] = useState(0)
 
     useEffect(() => {
-        setCarouselImg([CarouselImg, CarouselImg2])
+        setCarouselImg([CarouselImg, CarouselImg2, CarouselImg3])
     }, [])
 
     function handlePrev() {
@@ -96,20 +98,23 @@ export default function Home() {
                 <Landing />
             </div>
 
-            <div className="flex h-max w-full -z-[11] py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500  to-[#FF9201] to-50%">
-                <div className="mx-auto relative flex w-full flex-row justify-center overflow-hidden">
+            <div className="flex h-auto w-full -z-[11] py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 to-[#FF9201] to-50%">
+                <div className="mx-auto px-10 relative w-full flex h-auto flex-row justify-center">
                     {
                         carouselImg && 
                         <AnimatePresence initial={false} custom={direction}>
                             <motion.img 
-                                key={carouselImg[index]}
+                                key={nanoid()}
                                 src={carouselImg[index]} 
-                                className="aspect-video w-[70%] md:w-[80%] xl:w-[50%] mx-auto object-cover object-center"
+                                className="aspect-video mx-auto w-full object-fill object-center"
                                 initial="initial"
                                 animate="animate"
                                 end="end"
                                 variants={variants}
                                 custom={direction}
+
+                                // onClick={} for making the image dynamic and redirect to somewhere elese
+
                             />
                         </AnimatePresence>
                     }

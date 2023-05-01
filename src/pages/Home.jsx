@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { AnimatePresence, motion, transform } from "framer-motion"
+import React, { useState, useEffect, Component } from "react"
+import { AnimatePresence, animate, motion } from "framer-motion"
 
 
 import Logo from "../assets/home/logo.png"
@@ -19,7 +19,7 @@ function Landing() {
                     <h1 className="text-[#000778]">Welcome to the</h1>
                     <h1 className="text-[#000778]">Official Page of</h1>
                     <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#030B98] from-[16.16%] to-[#FF9201] to-[43.13%] 
-                                text-xl min-width[360px]:text-2xl min-[500px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Coding Club</h1>
+                                text-xl min-[360px]:text-2xl min-[500px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Coding Club</h1>
                 </span>
 
                 <span className="">
@@ -34,32 +34,10 @@ function Landing() {
     )
 }
 
-// function Carousel() {
-//     return (
-//         <div className="carousel w-full h-max py-8">
-//             <div id="slide1" className="carousel-item relative w-full">
-//                 <img src={CarouselImg} className="w-full" />
-//                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-//                 <a href="#slide4" className="btn btn-circle">❮</a> 
-//                 <a href="#slide2" className="btn btn-circle">❯</a>
-//                 </div>
-//             </div> 
-//             <div id="slide2" className="carousel-item relative w-full">
-//                 <img src={CarouselImg} className="w-full" />
-//                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-//                 <a href="#slide1" className="btn btn-circle">❮</a> 
-//                 <a href="#slide3" className="btn btn-circle">❯</a>
-//                 </div>
-//             </div> 
-//         </div>
-//     )
-// }
-
 const variants = {
     initial: direction => {return {
         x: direction > 0 ? 500 : -500,
         opacity: 0,
-        transition: "ease-in"
     }},
     animate: {
         x: 0,
@@ -71,6 +49,51 @@ const variants = {
         opacity: 0,
         transition: "ease-in"
     }}
+}
+
+function Carousel(props) {
+    return (
+        <div className="relative flex h-auto w-full py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 via-30% to-[#FF9201] to-40% md:to-40%">
+            <div className="mx-auto px-10 relative w-full flex h-auto flex-row justify-center">
+                {
+                    props.carouselImg && 
+                    <AnimatePresence initial={false} custom={props.direction}>
+                        <motion.img 
+                            key={nanoid()}
+                            src={props.carouselImg[props.index]} 
+                            className="aspect-video h-auto mx-auto w-full object-fill object-center rounded-3xl"
+                            initial="initial"
+                            animate="animate"
+                            end="end"
+                            custom={props.direction}
+                            variants={variants}
+                        />
+                    </AnimatePresence>
+                }
+
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-0 sm:left-2 md:left-7 right-0 sm:right-2 md:right-7 top-1/2 z-10">
+                    <motion.button 
+                        className="cursor-pointer relative left-0" 
+                        onClick={props.handlePrev}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.8 }}
+                    >
+                        <FaChevronLeft size={40}  className="text-white"/>
+                    </motion.button>
+
+                    <motion.button
+                        className="cursor-pointer relative right-0"
+                        onClick={props.handleNext}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.8 }}
+                    >
+                        <FaChevronRight size={40} className="text-white"/>
+                    </motion.button>
+                </div>
+            </div>
+            <div className="absolute bottom-0 w-full h-6 bg-gradient-to-b from-[#FF9201] to-home"></div>
+        </div>
+    )
 }
 
 export default function Home() {
@@ -94,55 +117,19 @@ export default function Home() {
 
     return (
         <div className="relative min-h-full">
-            <div className="relative -z-10 bg-gradient-to-r from-[#000778] from-[40%] via-slate-500 via-70% to-[#FF9201]">
+            <div className="relative -z-10 bg-gradient-to-r from-[#000778] from-[40%] via-slate-500 via-30% to-[#FF9201] to-60%">
                 <Landing />
             </div>
 
-            <div className="flex h-auto w-full -z-[11] py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 to-[#FF9201] to-50%">
-                <div className="mx-auto px-10 relative w-full flex h-auto flex-row justify-center">
-                    {
-                        carouselImg && 
-                        <AnimatePresence initial={false} custom={direction}>
-                            <motion.img 
-                                key={nanoid()}
-                                src={carouselImg[index]} 
-                                className="aspect-video mx-auto w-full object-fill object-center"
-                                initial="initial"
-                                animate="animate"
-                                end="end"
-                                variants={variants}
-                                custom={direction}
-
-                                // onClick={} for making the image dynamic and redirect to somewhere elese
-
-                            />
-                        </AnimatePresence>
-                    }
-
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-2 md:left-7 right-2 md:right-7 top-1/2 z-10">
-                        <motion.button 
-                            className="cursor-pointer relative left-0" 
-                            onClick={handlePrev}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.8 }}
-                        >
-                            <FaChevronLeft size={40}  className="text-white"/>
-                        </motion.button>
-
-                        <motion.button
-                            className="cursor-pointer relative "
-                            onClick={handleNext}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.8 }}
-                        >
-                            <FaChevronRight size={40} className="text-white"/>
-                        </motion.button>
-                    </div>
-                </div>
-            </div>
-
+            <Carousel 
+                handleNext={handleNext} 
+                handlePrev={handlePrev} 
+                carouselImg={carouselImg}
+                index={index}
+                setIndex={index}
+                direction={direction}
+            />
             
-                
         </div>
     )
 }

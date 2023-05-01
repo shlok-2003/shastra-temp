@@ -10,10 +10,13 @@
     .header-btn { @apply h-8 w-16 px-4 py-1 rounded-full; }
     
     .header-btn-act { @apply bg-[#FF9201] text-white font-[400] shadow-[-6px_6px_0px_0px_#020B91]; }
+
+    /* .landmark {
+        @apply relative -z-10 bg-black h-max border-b-[3rem] border-solid border-blue-600;
+    } */
 }
 
 body, html {
     max-height: 100vh;
     max-width: 100vw;
 }
-

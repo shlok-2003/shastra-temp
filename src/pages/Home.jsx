@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion, transform } from "framer-motion"
 
 
 import Logo from "../assets/home/logo.png"
 import CarouselImg from "../assets/home/carousel.jpg"
 import CarouselImg2 from "../assets/home/carousel2.jpeg"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { nanoid } from "nanoid"
 
 function Landing() {
     return (
@@ -52,52 +53,91 @@ function Landing() {
 //     )
 // }
 
+const variants = {
+    initial: direction => {return {
+        x: direction > 0 ? 500 : -500,
+        opacity: 0,
+        transition: "ease-in"
+    }},
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: "ease-in"
+    }, 
+    end: direction => {return {
+        x: direction > 0 ? -500 : 500,
+        opacity: 0,
+        transition: "ease-in"
+    }}
+}
+
 export default function Home() {
     const [carouselImg, setCarouselImg] = useState(null)
     const [index, setIndex] = useState(0)
+    const [direction, setDirection] = useState(0)
+
     useEffect(() => {
         setCarouselImg([CarouselImg, CarouselImg2])
     }, [])
 
-    console.log(index)
+    function handlePrev() {
+        setDirection(-1)
+        setIndex(prevState => prevState - 1 >= 0 ? prevState - 1 : carouselImg.length - 1)
+    }
+
+    function handleNext() {
+        setDirection(1)
+        setIndex(prevState => prevState + 1 < carouselImg.length ? prevState + 1 : 0)
+    }
+
     return (
         <div className="relative min-h-full">
-            <div className="relative -z-10 bg-black h-max">
+            <div className="relative -z-10 bg-gradient-to-r from-[#000778] from-[40%] via-slate-500 via-70% to-[#FF9201]">
                 <Landing />
             </div>
 
-            <div className="relative flex h-max w-full z-[1] bg-black py-10 ">
-                <motion.div className="w-full relative flex flex-row justify-center">
-                    
-                    <div className="">
-                        {
-                            carouselImg && <img src={carouselImg[index]} className="aspect-video h-44 md:h-80"/>
-                        }
-                    </div>
-                </motion.div>
-                    
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
-                    <button 
-                        className="cursor-pointer relative left-0" 
-                        onClick={() => setIndex(prevState => (
-                            prevState + 1 < carouselImg.length ? prevState + 1 : 0)
-                        )}
-                    >
-                        <FaChevronLeft size={40} className="text-white"/>
-                    </button>
+            <div className="flex h-max w-full -z-[11] py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500  to-[#FF9201] to-50%">
+                <div className="mx-auto relative flex w-full flex-row justify-center overflow-hidden">
+                    {
+                        carouselImg && 
+                        <AnimatePresence initial={false} custom={direction}>
+                            <motion.img 
+                                key={carouselImg[index]}
+                                src={carouselImg[index]} 
+                                className="aspect-video w-[70%] md:w-[80%] xl:w-[50%] mx-auto object-cover object-center"
+                                initial="initial"
+                                animate="animate"
+                                end="end"
+                                variants={variants}
+                                custom={direction}
+                            />
+                        </AnimatePresence>
+                    }
 
-                    <button
-                        className="cursor-pointer relative "
-                        onClick={() => setIndex(prevState => (
-                            prevState - 1 >= 0 ? prevState - 1 : carouselImg.length - 1
-                        ))}
-                    >
-                        <FaChevronRight size={40} className="text-white"/>
-                    </button>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-2 md:left-7 right-2 md:right-7 top-1/2 z-10">
+                        <motion.button 
+                            className="cursor-pointer relative left-0" 
+                            onClick={handlePrev}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.8 }}
+                        >
+                            <FaChevronLeft size={40}  className="text-white"/>
+                        </motion.button>
+
+                        <motion.button
+                            className="cursor-pointer relative "
+                            onClick={handleNext}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.8 }}
+                        >
+                            <FaChevronRight size={40} className="text-white"/>
+                        </motion.button>
+                    </div>
                 </div>
-                    
-                    
-                </div>
+            </div>
+
+            
+                
         </div>
     )
 }

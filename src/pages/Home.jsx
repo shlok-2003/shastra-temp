@@ -70,12 +70,6 @@ function Carousel(props) {
                     </AnimatePresence>
                 }
 
-                <div className="bg-red-700 h-4 flex flex-row items-center justify-between">
-                    {
-                        <CarouselDot />
-                    }
-                </div>
-
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-0 sm:left-2 md:left-7 right-0 sm:right-2 md:right-7 top-1/2 z-10">
                     <button 
                         className="cursor-pointer relative left-1 hover:scale-[1.1]" 

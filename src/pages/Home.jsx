@@ -1,15 +1,13 @@
-import React, { useState, useEffect, Component } from "react"
-import { AnimatePresence, animate, motion } from "framer-motion"
+import React, { useState, useEffect } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 
 import Logo from "../assets/home/logo.png"
 import CarouselImg from "../assets/home/carousel.jpg"
-import CarouselImg2 from "../assets/home/carousel2.jpeg"
 import CarouselImg3 from "../assets/home/carousel3.jpg"
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import { nanoid } from "nanoid"
-
 function Landing() {
     return (
         <div className="h-64 min-[360px]:h-60 sm:h-72 md:h-[17rem] lg:h-80 bg-home rounded-b-[76px] md:rounded-b-[94px] lg:rounded-b-[114px]">
@@ -36,59 +34,62 @@ function Landing() {
 
 const variants = {
     initial: direction => {return {
-        x: direction > 0 ? 500 : -500,
-        opacity: 0,
+        x: direction > 0 ? 1300 : -1300,
+        opacity: 0
     }},
     animate: {
         x: 0,
         opacity: 1,
         transition: "ease-in"
-    }, 
+    },
     end: direction => {return {
-        x: direction > 0 ? -500 : 500,
+        x: direction > 0 ? -1300 : 1300,
         opacity: 0,
-        transition: "ease-in"
+        transition: "ease-in-out"
     }}
 }
 
 function Carousel(props) {
     return (
         <div className="relative flex h-auto w-full py-10 bg-gradient-to-br from-[#000778] from-[20%] via-slate-500 via-30% to-[#FF9201] to-40% md:to-40%">
-            <div className="mx-auto px-10 relative w-full flex h-auto flex-row justify-center">
+            <div className="mx-auto sm:px-10 relative w-full flex flex-row justify-center overflow-hidden md:h-auto">
                 {
                     props.carouselImg && 
                     <AnimatePresence initial={false} custom={props.direction}>
                         <motion.img 
+                            id=""
                             key={nanoid()}
                             src={props.carouselImg[props.index]} 
-                            className="aspect-video h-auto mx-auto w-full object-fill object-center rounded-3xl"
+                            className="aspect-video sm:aspect-auto h-full mx-auto w-full inline-block object-center sm:object-cover md:rounded-3xl"
+                            custom={props.direction}
                             initial="initial"
                             animate="animate"
                             end="end"
-                            custom={props.direction}
                             variants={variants}
                         />
                     </AnimatePresence>
                 }
 
+                <div className="bg-red-700 h-4 flex flex-row items-center justify-between">
+                    {
+                        <CarouselDot />
+                    }
+                </div>
+
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-0 sm:left-2 md:left-7 right-0 sm:right-2 md:right-7 top-1/2 z-10">
-                    <motion.button 
-                        className="cursor-pointer relative left-0" 
+                    <button 
+                        className="cursor-pointer relative left-1 hover:scale-[1.1]" 
                         onClick={props.handlePrev}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.8 }}
                     >
                         <FaChevronLeft size={40}  className="text-white"/>
-                    </motion.button>
+                    </button>
 
-                    <motion.button
-                        className="cursor-pointer relative right-0"
+                    <button
+                        className="cursor-pointer relative right-1 hover:scale-[1.1]"
                         onClick={props.handleNext}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.8 }}
                     >
                         <FaChevronRight size={40} className="text-white"/>
-                    </motion.button>
+                    </button>
                 </div>
             </div>
             <div className="absolute bottom-0 w-full h-6 bg-gradient-to-b from-[#FF9201] to-home"></div>
@@ -102,7 +103,7 @@ export default function Home() {
     const [direction, setDirection] = useState(0)
 
     useEffect(() => {
-        setCarouselImg([CarouselImg, CarouselImg2, CarouselImg3])
+        setCarouselImg([CarouselImg, CarouselImg3, CarouselImg, CarouselImg3])
     }, [])
 
     function handlePrev() {
@@ -118,7 +119,9 @@ export default function Home() {
     return (
         <div className="relative min-h-full">
             <div className="relative -z-10 bg-gradient-to-r from-[#000778] from-[40%] via-slate-500 via-30% to-[#FF9201] to-60%">
-                <Landing />
+                <Landing 
+                    key={nanoid()}
+                />
             </div>
 
             <Carousel 
@@ -129,6 +132,10 @@ export default function Home() {
                 setIndex={index}
                 direction={direction}
             />
+
+            <div>
+
+            </div>
             
         </div>
     )

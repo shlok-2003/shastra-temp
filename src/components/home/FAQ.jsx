@@ -1,5 +1,5 @@
 import React from "react"
-import QuestionMark from "../assets/home/questionMark.png"
+import QuestionMark from "../../assets/home/questionMark.png"
 
 export default function FAQ() {
     return (

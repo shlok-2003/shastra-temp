@@ -82,7 +82,8 @@ export default function Header() {
 
             <NavLink
                 to="/contact"
-                className="hidden my-auto text-center font-[400] border-2 border-black rounded-full md:block md:px-2 md:py-[1px] lg:px-4 lg:py-0.5 lg:text-[20px]"
+                end
+                className={({isActive}) => isActive ? "header-btn-ctc header-btn-act" : "header-btn-ctc"}
             >
                 Contact us
             </NavLink>

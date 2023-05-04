@@ -1,6 +1,6 @@
 import React from "react"
 
-import Logo from "../assets/home/logo.png"
+import Logo from "../../assets/home/logo.png"
 
 export default function Landing() {
     return (

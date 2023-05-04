@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
 
-import Carousel from "../components/Carousel"
-import Landing from "../components/Landing"
-import Vision from "../components/Vision"
-import CorePeeps from "../components/CorePeeps"
-import FAQ from "../components/FAQ"
+import Carousel from "../components/home/Carousel"
+import Landing from "../components/home/Landing"
+import Vision from "../components/home/Vision"
+import CorePeeps from "../components/home/CorePeeps"
+import FAQ from "../components/home/FAQ"
 
 import CarouselImg from "../assets/home/carousel.jpg"
 import CarouselImg3 from "../assets/home/carousel3.jpg"

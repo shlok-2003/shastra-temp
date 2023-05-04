@@ -1,7 +1,7 @@
 import React from "react"
 
-import Thumbnail from "../assets/home/thumbnail.png"
-import Quote from "../assets/home/quote.png"
+import Thumbnail from "../../assets/home/thumbnail.png"
+import Quote from "../../assets/home/quote.png"
 
 export default function Vision() {
     return (
@@ -20,7 +20,7 @@ export default function Vision() {
             <div className="flex flex-col relative">
                 <span className="capitalize ml-5 md:ml-10 my-auto inline-block font-bold w-max text-xl md:text-3xl pb-5 gradient-txt">Scoops from the club</span>
                 <div className="grid grid-cols-4 gap-1 pl-5 md:pl-10">
-                    <img src={Thumbnail} className="inline-block h-[5.5rem] min-[530px]:h-[6.5px] sm:h-28 md:h-44 lg:h-60 my-auto mr-2"/>
+                    <img src={Thumbnail} className="inline-block aspect-square h-[5.5rem] min-[530px]:h-[6.5px] sm:h-28 md:h-44 lg:h-60 my-auto mr-2"/>
                     <p className="text-xs relative z-[5] md:text-xl text-justify my-auto md:pr-20 pr-5 col-span-3">
                         <img src={Quote} className="inline-block absolute -z-[5] aspect-square h-8 w-10 md:h-16 md:w-20 -left-5 md:-left-10 -top-2 md:-top-5"/>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 

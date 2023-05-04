@@ -7,7 +7,7 @@ export default function Contact() {
         "LastName": "",
         "Email": "",
         "Phone": "",
-        "Hackerrank Id": "",
+        "HackerrankId": "",
         "Message": ""
     })
 

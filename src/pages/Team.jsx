@@ -9,42 +9,42 @@ export default function Team() {
 
     useEffect(() => {
         setCore([
-            {id: 1, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 2, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 3, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 4, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 5, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 6, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 7, image: Thumbnail, name: "Sarang", designation: "NaN"},
+            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
         ])
         setSubCore([
-            {id: 1, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 2, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 3, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 4, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 5, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 6, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 7, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 8, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 9, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 10, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 11, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 12, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 13, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 14, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 15, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 16, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 17, image: Thumbnail, name: "Sarang", designation: "NaN"},
-            {id: 18, image: Thumbnail, name: "Sarang", designation: "NaN"},
+            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 8, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 9, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 10, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 11, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 12, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 13, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 14, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 15, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 16, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 17, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 18, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
         ])
     }, [])
 
     return (
         <div className="relative -z-10 min-h-[100%]">
-            <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
+            <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] h-20 md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
 
             <div className="relative mt-32 mb-16 w-full flex flex-col">
-                <h1 className="uppercase font-bold text-2xl mx-auto w-max text-black md:text-4xl mb-7">Know the Core</h1>
+                <h1 className="uppercase font-bold text-2xl mx-auto w-max md:text-4xl mb-7 gradient-txt">Know the Core</h1>
 
                 <div className="team--core-grid grid grid-cols-4 md:grid-cols-8 gap-8 md:gap-10 mx-3 md:mx-0 lg:mx-3 self-center p-10 md:p-5 lg:p-10 
                                 bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]
@@ -72,7 +72,7 @@ export default function Team() {
             </div>
 
             <div className="relative mt-8 mb-16 w-full flex flex-col">
-                <h1 className="uppercase font-bold text-2xl mx-auto w-max text-black md:text-4xl mb-7">Sub-Core</h1>
+                <h1 className="uppercase font-bold text-2xl mx-auto w-max md:text-4xl mb-7 gradient-txt">Sub-Core</h1>
                 
                 <div className="team--subcore-grid grid grid-cols-4 md:grid-cols-8 gap-10 mx-3 self-center p-10 
                                 bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]

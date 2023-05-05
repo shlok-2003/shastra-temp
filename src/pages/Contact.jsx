@@ -32,12 +32,12 @@ export default function Contact() {
 
     return (
         <div className="relative z-10 min-h-[100%]">
-            <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
+            <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] h-20 md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
             <div className="fixed top-20 bg-transparent backdrop-blur-2xl backdrop-filter h-full w-full"></div>
 
-            <div className="relative z-20 mt-28 h-screen w-full flex flex-col justify-center items-center">
+            <div className="relative mt-28 h-screen w-full flex flex-col justify-center items-center">
                 <form >  
-                    <div className="mx-auto w-max p-10  h-max space-y-5 relative z-[8] bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[70px]
+                    <div className="p-10 px-5 sm:px-10  h-max space-y-5 relative z-[8] bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[70px]
                                 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl">
                         <div>
                             <h1>Name:</h1>

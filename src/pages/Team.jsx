@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 
-import Thumbnail from "../assets/teams/Sarang.jpg"
+import Thumbnail from "../assets/teams/thumbnail.png"
 
 export default function Team() {
     const [core, setCore] = useState(null)

@@ -35,9 +35,10 @@ export default function Contact() {
             <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
             <div className="fixed top-20 bg-transparent backdrop-blur-2xl backdrop-filter h-full w-full"></div>
 
-            <div className="mt-32">
+            <div className="relative z-20 mt-28 h-screen w-full flex flex-col justify-center items-center">
                 <form >  
-                    <div className="mx-auto w-[90%] md:w-[50%] h-max space-y-5 relative z-[8]">
+                    <div className="mx-auto w-max p-10  h-max space-y-5 relative z-[8] bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[70px]
+                                shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl">
                         <div>
                             <h1>Name:</h1>
                             <div className="flex flex-col sm:space-x-4 space-y-3 sm:space-y-0 sm:flex-row">
@@ -45,7 +46,7 @@ export default function Contact() {
                                     type="text"
                                     name="FirstName"
                                     placeholder="First Name"
-                                    className=" w-40 md:w-60 input-box"
+                                    className=" w-40 md:w-80 input-box"
                                     onInput={getText}
                                     value={data.FirstName}
                                 />
@@ -53,7 +54,7 @@ export default function Contact() {
                                     type="text"
                                     name="LastName" 
                                     placeholder="Last Name" 
-                                    className="w-40 md:w-60 input-box"
+                                    className="w-40 md:w-80 input-box"
                                     onInput={getText}
                                     value={data.LastName}
                                 />
@@ -107,16 +108,16 @@ export default function Contact() {
                             <div className="mt-3 space-x-6">   
                                 <motion.button      
                                     type="submit"       
-                                    className="rounded-lg bg-home font-bold text-pri-orange text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)] hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
+                                    className="rounded-lg bg-home md:font-bold text-pri-orange text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)] hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    // {/* onSubmit={handleSubmit} */}
+                                    onSubmit={handleSubmit} 
                                 >
                                     Submit
                                 </motion.button>
                                 <motion.button      
                                     type="reset"       
-                                    className="rounded-lg bg-home font-bold text-pri-blue text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]  hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
+                                    className="rounded-lg bg-home md:font-bold text-pri-blue text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]  hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >

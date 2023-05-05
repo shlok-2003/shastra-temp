@@ -22,11 +22,16 @@ body, html {
     max-height: 100vh;
     max-width: 100vw;
 }
-/*
-.team--core-grid:nth-child(1) { grid-area: one; }
-.team--core-grid:nth-child(2) { grid-area: two; }
-.team--core-grid:nth-child(3) { grid-area: three; }
-.team--core-grid:nth-child(4) { grid-area: four; }
-.team--core-grid:nth-child(5) { grid-area: five; }
-.team--core-grid:nth-child(6) { grid-area: six; }
-.team--core-grid:nth-child(7) { grid-area: seven; } */
+
+@media (min-width: 768px) {
+    .team--core-grid > div:nth-child(7n + 5) {
+        grid-column-start: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .team--core-grid > div:last-child {
+        grid-column-start: 2;
+    }
+}
+

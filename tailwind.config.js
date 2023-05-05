@@ -20,7 +20,9 @@ export default {
       },
       colors: {
         'footer': "#EBEBEB",
-        'home': "#EFEFED"
+        'home': "#EFEFED",
+        'pri-orange': '#FF9201',
+        'pri-blue': '#030B98',
       }
     },
   },

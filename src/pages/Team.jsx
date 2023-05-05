@@ -74,7 +74,7 @@ export default function Team() {
             <div className="relative mt-8 mb-16 w-full flex flex-col">
                 <h1 className="uppercase font-bold text-2xl mx-auto w-max text-black md:text-4xl mb-7">Sub-Core</h1>
                 
-                <div className="team--core-grid grid grid-cols-4 md:grid-cols-8 gap-10 mx-3 self-center p-10 
+                <div className="team--subcore-grid grid grid-cols-4 md:grid-cols-8 gap-10 mx-3 self-center p-10 
                                 bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]
                                 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl"
                 >

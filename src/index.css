@@ -27,6 +27,9 @@ body, html {
     .team--core-grid > div:nth-child(7n + 5) {
         grid-column-start: 2;
     }
+    .team--subcore-grid > div:nth-child(7n + 5) {
+        grid-column-start: 2;
+    }
 }
 
 @media (max-width: 768px) {
@@ -34,4 +37,6 @@ body, html {
         grid-column-start: 2;
     }
 }
+
+
 

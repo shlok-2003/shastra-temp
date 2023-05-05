@@ -31,7 +31,7 @@ export default function Header() {
     const [drawer, setDrawer] = useState(false)
 
     return (
-        <header className="fixed z-20 backdrop-filter backdrop-blur-sm top-0 flex flex-row w-full px-1 text-black bg-transparent sm:px-5 pt-3 pb-2 sm:justify-between">
+        <header className="fixed select-none z-20 backdrop-filter backdrop-blur-sm top-0 flex flex-row w-full px-1 text-black bg-transparent sm:px-5 pt-3 pb-2 sm:justify-between">
             <Link to="/" className="w-max flex items-center outline-none">
                 <img src={Logo} className="inline-block h-[43px] w-[86px] sm:h-[63px] sm:w-[126px]"/>
                 {/* <img src={Text} className="h-[43px] w-[63px] inline-block my-auto"/> */}        {/* If the text is need in img, then use this */}

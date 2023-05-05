@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
+import { Link } from "react-router-dom"
 
 import Thumbnail from "../assets/teams/thumbnail.png"
+import { LinkedIn } from "@mui/icons-material"
 
 export default function Team() {
     const [core, setCore] = useState(null)
@@ -9,44 +11,44 @@ export default function Team() {
 
     useEffect(() => {
         setCore([
-            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
         ])
         setSubCore([
-            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 8, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 9, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 10, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 11, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 12, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 13, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 14, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 15, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 16, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 17, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
-            {id: 18, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN"},
+            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 8, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 9, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 10, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 11, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 12, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 13, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 14, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 15, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 16, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 17, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
+            {id: 18, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
         ])
     }, [])
 
     return (
-        <div className="relative -z-10 min-h-[100%]">
+        <div className="relative z-10 min-h-[100%]">
             <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] h-20 md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
 
             <div className="relative mt-32 mb-16 w-full flex flex-col">
                 <h1 className="uppercase font-bold text-2xl mx-auto w-max md:text-4xl mb-7 gradient-txt">Know the Core</h1>
 
-                <div className="team--core-grid grid grid-cols-4 md:grid-cols-8 gap-8 md:gap-10 mx-3 md:mx-0 lg:mx-3 self-center p-10 md:p-5 lg:p-10 
+                <div className="team--core-grid grid grid-cols-4 md:grid-cols-8 gap-8 md:gap-10 mx-3 md:mx-0 lg:mx-3 self-center md:p-10 p-5 lg:p-10 
                                 bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]
                                 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl"
                 >
@@ -56,12 +58,22 @@ export default function Team() {
                             <div
                                 key={nanoid()} 
                                 id={member.id}
-                                className="aspect-auto w-32 md:w-40 lg:w-52 relative bg-gray-500 rounded-xl overflow-hidden mx-auto my-auto col-span-2"
+                                className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-500 overflow-hidden"
                             >
-                                <div className="min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] overflow-hidden rounded-b-2xl">
-                                    <img src={member.image} className="inline-block object-fill object-center" alt="core image"/>
+                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem rounded-b-2xl overflow-hidden">
+
+                                    <img src={member.image} className="inline-block max-h-40 md:max-h-52 w-full object-cover object-center" alt="core image"/>
+                                    <div className="linkedin absolute z-20 opacity-100 -top-[13rem] w-full h-full flex justify-center items-center bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]">
+                                        <Link 
+                                            to={member.linkedin} 
+                                            className="cursor-pointer"
+                                        >
+                                            <LinkedIn sx={{height: 60, width: 50}} className="text-[#0e76a8]"/>
+                                        </Link>
+                                    </div>
+
                                 </div>
-                                <div className="bg-[#ffffff80]">
+                                <div className="bg-[#ffffff80] ">
                                     <h1 className="capitalize text-center text-lg">{member.name}</h1>  
                                     <h1 className="capitalize text-center text-sm">{member.designation}</h1>
                                 </div>
@@ -74,22 +86,32 @@ export default function Team() {
             <div className="relative mt-8 mb-16 w-full flex flex-col">
                 <h1 className="uppercase font-bold text-2xl mx-auto w-max md:text-4xl mb-7 gradient-txt">Sub-Core</h1>
                 
-                <div className="team--subcore-grid grid grid-cols-4 md:grid-cols-8 gap-10 mx-3 self-center p-10 
+                <div className="team--subcore-grid grid grid-cols-4 md:grid-cols-8 gap-10 mx-3 self-center p-5 md:p-10 
                                 bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]
                                 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl"
                 >
                     {
                         subCore && 
                         subCore.map(member => (
-                            <div 
-                                key={nanoid()}
+                            <div
+                                key={nanoid()} 
                                 id={member.id}
-                                className="aspect-auto w-32 md:w-40 lg:w-52 relative bg-gray-500 rounded-xl overflow-hidden mx-auto my-auto col-span-2"
+                                className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-500 overflow-hidden"
                             >
-                                <div className="min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] rounded-b-xl overflow-hidden">
-                                    <img src={member.image} className="inline-block object-fill object-center" alt="sub core image"/>
+                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem rounded-b-2xl overflow-hidden">
+
+                                    <img src={member.image} className="inline-block max-h-40 md:max-h-52 w-full object-cover object-center" alt="core image"/>
+                                    <div className="linkedin absolute z-20 opacity-100 -top-[13rem] w-full h-full flex justify-center items-center bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]">
+                                        <Link 
+                                            to={member.linkedin} 
+                                            className="cursor-pointer"
+                                        >
+                                            <LinkedIn sx={{height: 60, width: 50}} className="text-[#0e76a8]"/>
+                                        </Link>
+                                    </div>
+
                                 </div>
-                                <div className="bg-[#ffffff80]">
+                                <div className="bg-[#ffffff80] ">
                                     <h1 className="capitalize text-center text-lg">{member.name}</h1>  
                                     <h1 className="capitalize text-center text-sm">{member.designation}</h1>
                                 </div>
@@ -100,43 +122,4 @@ export default function Team() {
             </div>
         </div>
     )
-}
-
-{/* <div className="absolute ">Know the Core</div>
-            <div className="relative z-20 mt-32 mb-16 w-full md:w-[80%] grid grid-cols-2 md:grid-cols-4 gap-10  mx-auto backdrop-filter bg-sky-800 bg-transparent backdrop-blur-lg">
-                {
-                    core &&
-                    core.map(member => (
-                        <div className="relative h-52 w-44 bg-slate-100 rounded-xl overflow-hidden mx-auto my-auto">
-                            <div className="h-[80%] w-full bg-slate-400 rounded-b-2xl overflow-hidden">
-                                <img src={""} className="object-fill object-center" alt="core image"/>
-                            </div>
-                            <div className="bg-[#ffffff80]">
-                                <h1 className="capitalize text-center text-base">Name</h1>
-                                <h1 className="capitalize text-center text-sm">Designation</h1> 
-                            </div>
-                        </div>
-                    ))
-                }
-            </div> */}
-
-{/* core.map(member => (
-                        <Card
-                            key={nanoid()}
-                            sx={{ maxWidth: 150, maxHeight: 250 }}
-                        >
-                            <CardActionArea>
-                                <CardMedia
-                                component="img"
-                                height="50"
-                                image={member}
-                                alt="core image"
-                                className="w-full h-full object-cover object-center rounded-lg"
-                                />
-                                <CardContent>
-                                    <h1 className="capitalize text-center text-base">name</h1>
-                                    <h1 className="capitalize text-center text-sm">designation</h1>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    )) */}
+}   

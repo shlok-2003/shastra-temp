@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { motion, animatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Contact() {
     const [data, setData] = useState({

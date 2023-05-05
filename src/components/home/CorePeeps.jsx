@@ -13,7 +13,7 @@ export default function CorePeeps() {
     return (
         <div className="flex flex-col self-center">
             <span className="pb-7 self-center  uppercase font-bold text-2xl md:text-4xl select-none inline-block w-max gradient-txt">Core Peeps</span>
-            <div className="grid grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-8 md:gap-10 lg:gap-x-20 lg:gap-y-10 md:mx-2">
+            <div className="grid grid-cols-2 sm:grid-c lg:grid-cols-4 gap-4 sm:gap-8 md:gap-10 lg:gap-x-20 lg:gap-y-10 md:mx-2">
                 {    
                     core &&
                     core.map(personImg => (

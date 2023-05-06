@@ -1,9 +1,4 @@
 import React, { useState } from "react"
-import { motion } from "framer-motion"
-
-const getRandomNumber = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
 
 export default function Contact() {
     const [data, setData] = useState({
@@ -26,18 +21,14 @@ export default function Contact() {
         })
     }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-    }
-
     return (
         <div className="relative z-10 min-h-[100%]">
             <div className="fixed rounded-b-[30px] md:rounded-b-[40px] top-0 z-10 sm:h-[5.5rem] h-20 md:h-24 w-full bg-home shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]"></div>
-            <div className="fixed top-20 bg-transparent backdrop-blur-2xl backdrop-filter h-full w-full"></div>
+            {/* <div className="fixed top-20 bg-transparent backdrop-blur-[10px] backdrop-filter h-full w-full"></div> */}
 
-            <div className="relative mt-28 h-screen w-full flex flex-col justify-center items-center">
+            <div className="relative mt-28 mb-16 h-screen w-full flex flex-col justify-center items-center">
                 <form >  
-                    <div className="p-10 px-5 sm:px-10  h-max space-y-5 relative z-[8] bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[70px]
+                    <div className="p-10 px-5 sm:px-10 h-max space-y-5 relative z-[8] bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]
                                 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl">
                         <div>
                             <h1>Name:</h1>
@@ -106,23 +97,18 @@ export default function Contact() {
                                 rows={7}  
                             />
                             <div className="mt-3 space-x-6">   
-                                <motion.button      
+                                <button      
                                     type="submit"       
-                                    className="rounded-lg bg-home md:font-bold text-pri-orange text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)] hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    onSubmit={handleSubmit} 
+                                    className="rounded-lg bg-home md:font-bold text-pri-orange text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)] hover:scale-110 hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
                                 >
                                     Submit
-                                </motion.button>
-                                <motion.button      
+                                </button>
+                                <button      
                                     type="reset"       
-                                    className="rounded-lg bg-home md:font-bold text-pri-blue text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)]  hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
+                                    className="rounded-lg bg-home md:font-bold text-pri-blue text-lg px-4 py-2 shadow-[0_8px_10px_0_rgba(0,0,0,0.25)] hover:scale-110 hover:shadow-[0_8px_10px_0_rgba(0,0,0,0.35)] transition duration-300 ease-in-out"   
                                 >
                                     Reset
-                                </motion.button>
+                                </button>
                             </div>
                         </div>
                     </div>

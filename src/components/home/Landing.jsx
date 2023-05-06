@@ -10,8 +10,7 @@ export default function Landing() {
                 <span className="uppercase font-bold text-lg min-[360px]:text-xl min-[500px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     <h1 className="text-[#000778]">Welcome to the</h1>
                     <h1 className="text-[#000778]">Official Page of</h1>
-                    <h1 className="gradient-txt 
-                                text-xl min-[360px]:text-2xl min-[500px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Coding Club</h1>
+                    <h1 className="gradient-txt text-xl min-[360px]:text-2xl min-[500px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Coding Club</h1>
                 </span>
 
                 <span className="">

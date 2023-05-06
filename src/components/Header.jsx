@@ -2,33 +2,20 @@ import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { nanoid } from "nanoid"
 
+import HeaderDrawer from "./HeaderDrawer"
+
 import Logo from "../assets/header/shastra-logo-home.png"
-import Text from "../assets/header/shastra-logo-home-text.png"
-
-
-import MenuIcon from "@mui/icons-material/Menu"
-import { ThemeProvider } from "@emotion/react"
-import { createTheme } from "@mui/material/styles"
-import { Box, Drawer } from "@mui/material"
-
-const theme = createTheme({
-    status: {
-        danger: '#e53e3e',
-    },
-    palette: {
-        primary: {
-        main: '#FF9201',
-        darker: '#053e85',
-        },
-        neutral: {
-        main: '#64748B',
-        contrastText: '#fff',
-        },
-    },
-});
+import Text from "../assets/header/shastra-logo-home-text.png"  
 
 export default function Header() {
     const [drawer, setDrawer] = useState(false)
+    const [redirect, setRedirect] = useState([
+        {"page": "Home", "link": "/"},
+        {"page": "Team", "link": "team"},
+        {"page": "Events", "link": "events"},
+        {"page": "Learn", "link": "learn"},
+        {"page": "Contact us", "link": "contact"}
+    ])
 
     return (
         <header className="fixed select-none z-50 backdrop-filter backdrop-blur-sm top-0 flex flex-row w-full px-1 text-black bg-transparent sm:px-5 pt-3 pb-2 sm:justify-between">
@@ -41,48 +28,29 @@ export default function Header() {
                 </span>
             </Link>
 
-            <button 
-                className="ml-auto mr-2 border-2 border-black h-min my-auto rounded-lg md:hidden"
-                onClick={() => setDrawer(true)}
-            >
-                <ThemeProvider theme={theme}>
-                    <MenuIcon color="primary" fontSize="large" />
-                </ThemeProvider>
-            </button>
-
-            <Drawer anchor="right" open={drawer} onClose={() => setDrawer(false)} className="md:hidden">
-                <Box width="100px" m={5} textAlign="center" role="presentation">
-                    {
-                        [["Home", "/"], ["Team", "team"], ["Events", "events"], ["Learn", "learn"], ["Contact us", "contact"]].map(page => (
-                            <NavLink 
-                                key={nanoid()}
-                                to={`${page[1]}`} 
-                                className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-                            >
-                                {page[0]}
-                            </NavLink>
-                        ))
-                    }
-                </Box>
-            </Drawer>
+            <HeaderDrawer 
+                redirect={redirect}
+                drawer={drawer}
+                setDrawer={setDrawer}
+            />
 
             <nav className="hidden my-auto uppercase font-medium text-[20px] md:block md:space-x-2 lg:space-x-6 xl:space-x-8">
                 {
-                    [["Home", "/"], ["Team", "team"], ["Events", "events"], ["Learn", "learn"]].map(page => (
+                    redirect.length &&
+                    redirect.slice(0, redirect.length - 1).map(item => (           
                         <NavLink 
                             key={nanoid()}
-                            to={`${page[1]}`} 
-                            className={({isActive}) => isActive ? "header-btn header-btn-act" : "header-btn"}
+                            to={`${item.link}`} 
+                            className={({isActive}) => isActive ? "header-btn header-btn-act transition-all duration-200" : "header-btn"}
                         >
-                            {page[0]}
+                            {item.page}
                         </NavLink>
                     ))
                 }
             </nav>
 
             <NavLink
-                to="/contact"
-                end
+                to="contact"
                 className={({isActive}) => isActive ? "header-btn-ctc header-btn-act" : "header-btn-ctc"}
             >
                 Contact us
@@ -90,67 +58,3 @@ export default function Header() {
         </header>
     )
 }
-
-{
-    // For the SwipeableDrawer
-    /* <NavLink 
-        to="/"
-        className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-    >
-        Home
-    </NavLink>
-
-    <NavLink 
-        to="team"
-        className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-    >
-        Team
-    </NavLink>
-
-    <NavLink 
-        to="events"
-        className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-    >
-        Events
-    </NavLink>
-
-    <NavLink 
-        to="learn"
-        className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-    >
-        Learn
-    </NavLink>
-
-    <NavLink 
-        to="contact"
-        className={({isActive}) => isActive ? "header-btn-drawer header-btn-drawer-act" : "header-btn-drawer"}
-    >
-        Contact us
-    </NavLink> */}
-
-{
-    // For nav
-    /* <NavLink 
-        to="/"
-        className={({isActive}) => isActive ? "header-btn header-btn-act" : "header-btn"}
-    >
-        Home
-    </NavLink>
-    <NavLink 
-        to="team"
-        className={({isActive}) => isActive ? "header-btn header-btn-act" : "header-btn"}
-    >
-        Team
-    </NavLink>
-    <NavLink 
-        to="events"
-        className={({isActive}) => isActive ? "header-btn header-btn-act" : "header-btn"}
-    >
-        Events
-    </NavLink>
-    <NavLink 
-        to="learn"
-        className={({isActive}) => isActive ? "header-btn header-btn-act" : "header-btn"}
-    >
-        Learn
-    </NavLink> */}

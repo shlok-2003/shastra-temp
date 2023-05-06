@@ -2,43 +2,58 @@ import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 import { Link } from "react-router-dom"
 
-import Thumbnail from "../assets/teams/thumbnail.png"
 import { LinkedIn } from "@mui/icons-material"
 
+const core_API = "https://shastra-api.onrender.com/coreMembers";
+const subcore_API = "https://shastra-api.onrender.com/subcoreMembers";
+
 export default function Team() {
-    const [core, setCore] = useState(null)
-    const [subCore, setSubCore] = useState(null)
+    const [core, setCore] = useState([])
+    const [subCore, setSubCore] = useState([])
+
+    const fetchcoreUser = async(url) => {
+        try {
+            const res = await fetch(url, {
+                method: "GET",
+                crossDomain: true,
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
+            const data = await res.json();
+            if(data.length > 0){
+                setCore(data);
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    const fetchsubcoreUser = async(url) => {
+        try {
+            const res = await fetch(url, {
+                method: "GET",
+                crossDomain: true,
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            });
+            const data = await res.json();
+            if(data.length > 0){
+                setSubCore(data);
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
     useEffect(() => {
-        setCore([
-            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-        ])
-        setSubCore([
-            {id: 1, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 2, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 3, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 4, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 5, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 6, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 7, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 8, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 9, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 10, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 11, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 12, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 13, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 14, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 15, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 16, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 17, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-            {id: 18, image: Thumbnail, name: "Shlok Prajapati", designation: "NaN", linkedin: "https://www.linkedin.com/in/shlok-2003s"},
-        ])
+        fetchcoreUser(core_API);
+        fetchsubcoreUser(subcore_API)
     }, [])
 
     return (
@@ -67,6 +82,7 @@ export default function Team() {
                                         <Link 
                                             to={member.linkedin} 
                                             className="cursor-pointer"
+                                            target="_blank"
                                         >
                                             <LinkedIn sx={{height: 60, width: 50}} className="text-[#0e76a8]"/>
                                         </Link>

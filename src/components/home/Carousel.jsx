@@ -24,7 +24,9 @@ export default function Carousel(props) {
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
-                    pagination={pagination}
+                    pagination={{
+                        dynamicBullets: true
+                    }}
                     navigation={true}
                     keyboard={{enabled: true}}
                     modules={[Keyboard, Pagination, Navigation]}

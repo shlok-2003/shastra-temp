@@ -11,7 +11,7 @@
     transition-property: font-weight, background;
 }
 
-.swiper-pagination-bullet-active { color: white; font-weight: bold; background: #030B98; }
+.swiper-pagination-bullet-active { color: white; font-weight: bold; background: #ffc400; }
 
 .swiper-button-next, .swiper-button-prev { color: white; font-weight: bolder; }
 

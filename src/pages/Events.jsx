@@ -90,8 +90,8 @@ const past_events = [
                 <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Upcoming Event!</h1>
                 <div className="flex flex-wrap -mx-4 justify-center sm:justify-start gap-4 mt-2">
                     {upcoming_events.map(items => (
-                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4" key={items.name}>
-                    <div class="w-full h-auto rounded overflow-hidden shadow-lg relative mt-32 flex flex-col">
+                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 " key={items.name}>
+                    <div class="w-full h-auto rounded-lg overflow-hidden shadow-lg relative mt-10 flex flex-col bg-gray-200">
                         <img class="w-full inline-block object-fill object-cover object-center p-[10px] rounded-lg" src={items.thumbnai} alt=""/>
                         <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2 text-center">{items.name}</div>
@@ -108,8 +108,8 @@ const past_events = [
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Past Event!</h1>
                 <div className="flex flex-wrap -mx-4 justify-center sm:justify-start gap-4 mt-2">
                     {past_events.map(items => (
-                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4" key={items.name}>
-                        <div class="w-full h-auto rounded overflow-hidden shadow-lg relative mt-32 flex flex-col">
+                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-4 " key={items.name}>
+                        <div class="w-full h-auto rounded-lg overflow-hidden shadow-lg relative mt-10 flex flex-col bg-gray-200">
                         <img class="w-full inline-block object-fill object-cover object-center p-[10px] rounded-lg" src={items.thumbnai} alt=""/>
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2 text-center">{items.name}</div>

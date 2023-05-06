@@ -23,6 +23,7 @@ export default {
         'home': "#EFEFED",
         'pri-orange': '#FF9201',
         'pri-blue': '#030B98',
+        'pri-blueDark': '#040a6e',
       }
     },
   },

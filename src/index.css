@@ -16,6 +16,8 @@
     .gradient-txt { @apply text-transparent bg-clip-text bg-gradient-to-r from-[#030B98] from-[16.16%] to-[#FF9201] to-[43.13%]; }
 
     .input-box { @apply rounded-lg appearance-none w-40 indent-2 border-2 focus:bg-orange-200 bg-orange-100; } 
+
+    .footer-btn { @apply sm:border-2 sm:border-black sm:rounded-lg my-auto sm:py-1 sm:px-1.5 text-xs sm:text-base md:text-lg; }
 }
 
 body, html {
@@ -46,14 +48,3 @@ body, html {
         grid-column-start: 2;
     }
 }
-
-/* ::-webkit-scrollbar {
-    width: 6px;
-    position: absolute;
-    background: #D9D9D9;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #030B98;
-    width: 20px;
-} */

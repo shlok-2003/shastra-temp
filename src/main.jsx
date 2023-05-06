@@ -17,7 +17,7 @@ import URLNotFound from "./pages/URLNotFound"
 import "./index.css"
 
 const router = createBrowserRouter(createRoutesFromChildren(
-    <Route path="/" element={<MainLayout />} >
+    <Route path="/" element={<MainLayout />} errorElement={<URLNotFound />} >
       <Route index element={<Home />} />
       <Route path="team" element={<Team />} />
       <Route path="events" element={<Events />} /> 

@@ -12,22 +12,10 @@ import CarouselImg3 from "../assets/home/carousel3.jpg"
 
 export default function Home() {
     const [carouselImg, setCarouselImg] = useState(null)
-    const [index, setIndex] = useState(0)
-    const [direction, setDirection] = useState(0)
 
     useEffect(() => {
         setCarouselImg([CarouselImg, CarouselImg3, CarouselImg, CarouselImg3])
     }, [])
-
-    function handlePrev() {
-        setDirection(-1)
-        setIndex(prevState => prevState - 1 >= 0 ? prevState - 1 : carouselImg.length - 1)
-    }
-
-    function handleNext() {
-        setDirection(1)
-        setIndex(prevState => prevState + 1 < carouselImg.length ? prevState + 1 : 0)
-    }
 
     return (
         <div className="relative min-h-full">
@@ -38,12 +26,7 @@ export default function Home() {
             </div>
 
             <Carousel 
-                handleNext={handleNext} 
-                handlePrev={handlePrev} 
-                carouselImg={carouselImg}
-                index={index}
-                setIndex={index}
-                direction={direction}
+                slides={carouselImg}
             />
 
             <div className="relative z-10 h-max w-full flex flex-col justify-center space-y-5">

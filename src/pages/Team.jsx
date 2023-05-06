@@ -60,8 +60,8 @@ export default function Team() {
                                 id={member.id}
                                 className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-500 overflow-hidden"
                             >
-                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem rounded-b-2xl overflow-hidden">
-
+                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] rounded-b-2xl overflow-hidden">
+                                    {/* You can add padding to the image as per your requirements */}
                                     <img src={member.image} className="inline-block max-h-40 md:max-h-52 w-full object-cover object-center" alt="core image"/>
                                     <div className="linkedin absolute z-20 opacity-100 -top-[13rem] w-full h-full flex justify-center items-center bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]">
                                         <Link 
@@ -98,8 +98,8 @@ export default function Team() {
                                 id={member.id}
                                 className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-500 overflow-hidden"
                             >
-                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem rounded-b-2xl overflow-hidden">
-
+                                <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] rounded-b-2xl overflow-hidden">
+                                    {/* You can add padding to the image as per your requirements */}
                                     <img src={member.image} className="inline-block max-h-40 md:max-h-52 w-full object-cover object-center" alt="core image"/>
                                     <div className="linkedin absolute z-20 opacity-100 -top-[13rem] w-full h-full flex justify-center items-center bg-gradient-to-br from-[#ffffff14] to-[#ffffff00] backdrop-blur-[10px]">
                                         <Link 

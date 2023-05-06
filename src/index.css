@@ -5,13 +5,15 @@
 @layer components {
     .header-btn-drawer { @apply h-8 w-max px-4 py-1 rounded-full block mx-auto text-center mb-4; }
     
-    .header-btn-drawer-act { @apply bg-[#FF9201] text-white font-[400]; }
+    .header-btn-drawer-act { @apply bg-[#FF9201] text-white font-[400] transition-all duration-200; }
 
     .header-btn { @apply h-8 w-16 px-4 py-1 rounded-full; }
     
-    .header-btn-act { @apply bg-[#FF9201] text-white font-[400] shadow-[-6px_6px_0px_0px_#020B91]; }
+    .header-btn-act { @apply bg-[#FF9201] text-white font-[400] shadow-[-6px_6px_0px_0px_#020B91] transition-all duration-200; }
 
     .header-btn-ctc { @apply hidden my-auto text-center font-[400] border-2 border-black rounded-full md:block md:px-2 md:py-[1px] lg:px-4 lg:py-0.5 lg:text-[20px]; }
+
+    .gradient-txt-slant { @apply text-transparent bg-clip-text bg-gradient-to-br from-[#030B98] from-[35.16%] to-[#FF9201] to-[57.13%]; }
 
     .gradient-txt { @apply text-transparent bg-clip-text bg-gradient-to-r from-[#030B98] from-[16.16%] to-[#FF9201] to-[43.13%]; }
 

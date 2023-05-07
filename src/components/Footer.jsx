@@ -19,7 +19,7 @@ export default function Footer() {
     ])
     
     return (
-        <footer className="relative z-50 bottom-0 mt-3 max-w-full bg-footer flex flex-col justify-center rounded-t-[3.5rem] pb-5 shadow-[0px_-13px_2px_0px_#00000040] md:pb-0 md:flex-row md:justify-around md:rounded-t-[7.25rem]">
+        <footer className="relative z-50 hidden bottom-0 mt-3 max-w-full bg-footer flex flex-col justify-center rounded-t-[3.5rem] pb-5 shadow-[0px_-13px_2px_0px_#00000040] md:pb-0 md:flex-row md:justify-around md:rounded-t-[7.25rem]">
             <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center pt-8 sm:pt-16 pb-5 md:pb-16 px-5 sm:my-auto md:gap-x-8 md:gap-y-6 text-black">
                 {
                     link && 

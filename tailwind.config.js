@@ -21,8 +21,8 @@ export default {
       },
       keyframes: {
         fall: {
-          '0%, 100%': { transform: 'translateY(-20%)' },
-          '50%': { transform: 'translateY(-15%)' },
+          '0%, 100%': { transform: 'translateY(-25%)' },
+          '50%': { transform: 'translateY(-20%)' },
         }
       },
       animation: {

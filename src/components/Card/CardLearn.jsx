@@ -1,5 +1,5 @@
 import React from 'react'
-import "./learn.css"
+import "../../pages/Learn.css"
 const Card = (props) => {
 
     return (

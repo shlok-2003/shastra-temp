@@ -1,7 +1,46 @@
 import React from "react"
-import Card from './CardLearn'
-import data from './dataLearn'
+import Card from "../components/Card/CardLearn"
 import "./learn.css"
+
+const data = [
+  {
+    img: "shastra-temp/src/assets/home/logo.png",
+    title: "Title ",
+  },
+  {
+    img: "",
+    title: "Title ",
+  },
+  {
+    img: "",
+    title: "Title ",
+  },
+  {
+    img: "",
+    title: "Title ",
+  },
+  {
+      img: "",
+      title: "Title ",
+  },
+  {
+      img: "",
+      title: "title ",
+  },
+  {
+      img: "",
+      title: "title ",
+  },
+  {
+      img: "",
+      title: "title ",
+  },
+  {
+      img: "",
+      title: "title ",
+  }
+];
+
 
 export default function () {
     return (

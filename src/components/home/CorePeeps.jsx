@@ -42,7 +42,7 @@ export default function CorePeeps() {
                             className="flex flex-col items-center aspect-square justify-center space-y-2"
                         >
                             <span className="uppercase font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl text-center mx-auto inline-block w-max gradient-txt">post</span>
-                            <img src={member.image} className="inline-block aspect-square h-28 sm:h-28 md:h-36 lg:h-60 rounded-3xl"/>
+                            <img src={member.image} className="inline-block aspect-square h-32 sm:h-28 md:h-36 lg:h-60 rounded-3xl border border-black"/>
                         </div>
                     ))
                 }

@@ -13,7 +13,7 @@ import Team from "./pages/Team"
 import Events from "./pages/Events"
 import Learn from "./pages/Learn"
 import Contact from "./pages/Contact"
-import URLNotFound, { ErrorElement } from "./pages/Error"
+import URLNotFound, { ErrorElement } from "./pages/URLNotFound"
 
 import "./index.css"
 

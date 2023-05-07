@@ -1,5 +1,5 @@
 import React from "react"
-import Card from "../components/Card/CardLearn"
+import Card from "../components/Card/LearnCard"
 import "./learn.css"
 
 const data = [

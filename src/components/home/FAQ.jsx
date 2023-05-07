@@ -31,8 +31,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 function Box(props) {
     return (
         <Accordion 
-            className="col-span-3 w-full"
-            sx={{background: "#D3D3D3",}}
+            className="col-span-3"
+            sx={{background: "#D3D3D3", borderRadius: "5px", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
         >
             <AccordionSummary expandIcon={<ExpandMoreIcon sx={{fontSize: "40px", color: "black"}} fontSize={"bolder"}/>} aria-controls="panel1a-content" id="panel1a-header">
                 <p className="text-justify">{props.question}</p>

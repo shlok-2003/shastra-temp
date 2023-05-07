@@ -13,9 +13,6 @@ export default function Events() {
     const [upcoming_event, setUpcoming_Event] = useState(null)
     const [past_event, setPast_Event] = useState(null)
 
-    console.log(upcoming_event)
-    console.log(past_event)
-
     useEffect(() => {
         setUpcoming_Event([
             { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
@@ -50,7 +47,7 @@ export default function Events() {
                     <button className="bg-pri-blue text-white py-2 px-8 lg:px-12 rounded-full text-lg md:text-xl lg:text-2xl cursor-pointer hover:bg-pri-blueDark transition-all duration-300">
                         Register Now
                     </button>
-                    <button className="border border-black  text-black py-2 px-8 lg:px-12 rounded-full text-lg md:text-xl lg:text-2xl cursor-pointer">
+                    <button className="border border-black  text-black py-2 px-8 lg:px-12 rounded-full text-lg md:text-xl lg:text-2xl cursor-pointer hover:bg-gray-200 transition-all duration-300">
                         Get Details
                     </button>
                 </div>
@@ -66,21 +63,19 @@ export default function Events() {
                     {   
                         upcoming_event &&
                         upcoming_event.map(event => (
-                            <Link>
-                                <div
-                                    key={nanoid()} 
-                                    className="sm:w-72 min-[768px]:w-60 min-[980px]:w-72 rounded-2xl m-auto overflow-hidden bg-gray-300 p-3 sm:p-5 md:p-8 pb-0"
-                                >
-                                    <div className="relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] rounded-b-2xl overflow-hidden">
-                                        <img src={event.image} className="aspect-square inline-block max-h-40 md:max-h-52 w-full object-fill object-center rounded-xl" alt="core image"/>
-                                    </div>
-
-                                    <div className="h-16 md:h-10">
-                                        <h1 className="capitalize text-center text-lg">{event.name}</h1>  
-                                        <h1 className="capitalize text-center text-sm">{event.criteria}</h1>
-                                    </div>
+                            <div
+                                key={nanoid()} 
+                                className="sm:w-72 min-[768px]:w-60 min-[980px]:w-72 rounded-2xl m-auto overflow-hidden bg-gray-300 p-3 sm:p-5 md:p-8 pb-0"
+                            >
+                                <div className="relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] rounded-b-2xl overflow-hidden">
+                                    <img src={event.image} className="aspect-square inline-block max-h-40 md:max-h-52 w-full object-fill object-center rounded-xl" alt="core image"/>
                                 </div>
-                            </Link>
+
+                                <div className="h-16 md:h-10">
+                                    <h1 className="capitalize text-center text-lg">{event.name}</h1>  
+                                    <h1 className="capitalize text-center text-sm">{event.criteria}</h1>
+                                </div>
+                            </div>
                         ))
                     }
                     
@@ -96,7 +91,6 @@ export default function Events() {
                     {   
                         past_event &&
                         past_event.map(event => (
-                            <Link>
                                 <div
                                     key={nanoid()} 
                                     className="sm:w-72 min-[768px]:w-60 min-[980px]:w-72 rounded-2xl m-auto overflow-hidden bg-gray-300 p-3 sm:p-5 md:p-8 pb-0"
@@ -110,7 +104,6 @@ export default function Events() {
                                         <h1 className="capitalize text-center text-sm">{event.criteria}</h1>
                                     </div>
                                 </div>
-                            </Link>
                         ))
                     }
                     

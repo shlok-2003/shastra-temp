@@ -57,7 +57,7 @@ export default function FAQ() {
                     <p>Loading...</p>
                 }
                 
-                <div className="absolute hidden sm:flex right-2 min-[500px]:right-10 sm:right-10 md:right-10 top-20 sm:top-10 lg:top-10 z-10 items-center justify-center">
+                <div className="absolute hidden sm:flex right-2 min-[500px]:right-10 sm:right-10 md:right-10 lg:right-16 top-20 sm:top-10 lg:top-10 z-10 h-full items-center justify-center">
                     <img 
                         src={QuestionMark} 
                         className=" h-28 sm:h-32 md:h-48 lg:h-60 my-auto mr-2"

@@ -3,48 +3,19 @@ import Card from "../components/Card/LearnCard"
 import "./learn.css"
 
 const data = [
-  {
-    img: "shastra-temp/src/assets/home/logo.png",
-    title: "Title ",
-  },
-  {
-    img: "",
-    title: "Title ",
-  },
-  {
-    img: "",
-    title: "Title ",
-  },
-  {
-    img: "",
-    title: "Title ",
-  },
-  {
-      img: "",
-      title: "Title ",
-  },
-  {
-      img: "",
-      title: "title ",
-  },
-  {
-      img: "",
-      title: "title ",
-  },
-  {
-      img: "",
-      title: "title ",
-  },
-  {
-      img: "",
-      title: "title ",
-  }
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
+  { img: "shastra-temp/src/assets/home/logo.png", title: "Title ",},
 ];
 
 
 export default function () {
     return (
-        <div className="relative -z-10  min-h-[100%] ">
+        <div className="relative z-10  min-h-[100%] ">
 
             <Youtube />
             <h1 className="tips-tricks">TIPS AND TRICKS</h1>

@@ -5,7 +5,7 @@ import { Grid, Navigation } from "swiper"
 
 import "swiper/css"
 import "swiper/css/grid"
-import "./LearnSwiper.css"
+import "../../../css/LearnSwiper.css"
 
 export default function TipsTrick({tips, handleClick}) {
     const breakpoints = {
@@ -41,7 +41,7 @@ export default function TipsTrick({tips, handleClick}) {
                     tips.map(item => (
                         <SwiperSlide 
                             key={nanoid()} 
-                            className="learn--swiper h-max flex justify-center items-center" 
+                            className="h-max flex justify-center items-center" 
                         >
                             <img 
                                 src={item.image} 

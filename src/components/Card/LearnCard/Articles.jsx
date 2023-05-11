@@ -7,7 +7,7 @@ import "swiper/css"
 import "swiper/css/navigation"
 import "../../../css/LearnSwiper.css"
 
-export default function YouTube({youtube, handleClick}) {
+export default function Articles({articles, handleClick}) {
     const breakpoints = {
         320: {  
             slidesPerView: 'auto',
@@ -28,8 +28,8 @@ export default function YouTube({youtube, handleClick}) {
     }
     
     return (
-        <div className="h-56 w-[90%] mx-auto mt-24 md:mt-32 flex flex-col justify-center items-center bg-transparent backdrop-filter backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl">
-            <h1 className="uppercase self-start ml-1 md:ml-5 mb-1 font-bold md:text-xl">YouTube!!</h1>
+        <div className="h-56 w-[90%] mx-auto my-20 flex flex-col justify-center items-center bg-transparent backdrop-filter backdrop-blur-[10px] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-xl">
+            <h1 className="uppercase self-start ml-1 md:ml-5 mb-1 font-bold md:text-xl">Our Articles!!</h1>
             
             <Swiper 
                 spaceBetween={10}
@@ -39,8 +39,8 @@ export default function YouTube({youtube, handleClick}) {
                 className="w-[98%] rounded-xl grid self-center"
             >
                 {
-                    youtube &&
-                    youtube.map(item => (
+                    articles &&
+                    articles.map(item => (
                         <SwiperSlide 
                             key={nanoid()} 
                             className="flex justify-center items-center"

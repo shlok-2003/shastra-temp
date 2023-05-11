@@ -7,7 +7,7 @@ import { Autoplay, Pagination, Navigation, Keyboard } from "swiper"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
-import "./CarouselSwiper.css"
+import "../../css/CarouselSwiper.css"
 
 export default function Carousel(props) {
     const pagination = {

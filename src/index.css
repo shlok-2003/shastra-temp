@@ -28,6 +28,17 @@
 
 body, html { max-height: 100vh; max-width: 100vw; }
 
+.horizontal--scroller::-webkit-scrollbar { height: 10px; }
+
+.horizontal--scroller::-webkit-scrollbar-track {
+    margin-inline: 1rem;
+}
+
+.horizontal--scroller::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 0.75rem ;
+}
+
 .linkedin-container:hover .linkedin, .linkedin-container:focus .linkedin { opacity: 1; top: 0; } 
 
 .linkedin { transition: top 0.3s ease; }

@@ -12,11 +12,11 @@ export default function TipsTrick({tips, handleClick}) {
     const breakpoints = {
         320: {
             slidesPerView: 'auto',
-            slidesPerGroup: 2,
+            slidesPerGroup: 3,
         },
         560: {
             slidesPerView: 2,
-            slidesPerGroup: 2,
+            slidesPerGroup: 3,
         },
         768: {
             slidesPerView: 2,
@@ -36,7 +36,7 @@ export default function TipsTrick({tips, handleClick}) {
                 grid={{
                 rows: 2,
                 }}
-                spaceBetween={30}
+                spaceBetween={20}
                 navigation={true}
                 modules={[Grid, Navigation,Pagination]}
                 breakpoints={breakpoints}
@@ -64,7 +64,7 @@ export default function TipsTrick({tips, handleClick}) {
 }
 const styles = {
     height: '500px',
-    width: '50%',
+    width: '70%',
     padding: '50px',
     margin: '0 auto',
     backgroundColor: 'transparent',

@@ -76,8 +76,8 @@ export default function () {
             handleClick={handleClick}
         />
 
-        <div className="my-20 flex flex-col">
-            <h1 className="uppercase mb-4 self-center font-bold md:text-xl">Tips and Trick</h1>
+        <div className="my-10 flex flex-col">
+            <h1 className="uppercase mb-14 self-center  font-bold md:text-xl">Tips and Trick</h1>
             
             <TipsTrick 
                 tips={tips}

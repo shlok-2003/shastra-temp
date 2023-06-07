@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
-import { Link } from "react-router-dom"
 
+import EventCard from "../components/Card/EventCard"
 import Event from "../assets/events/watermark-black-opacity-half.png"
 import Watermark from "../assets/events/watermark-white.png"
 
@@ -15,9 +15,9 @@ export default function Events() {
 
     useEffect(() => {
         setUpcoming_Event([
-            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
+            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
+            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
+            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
         ])
 
         setPast_Event([
@@ -53,7 +53,6 @@ export default function Events() {
                 </div>
             </div>
 
-
             <div className="flex flex-col my-16">
                 <span className="capitalize font-bold ml-2 md:ml-16 text-xl md:text-3xl inline-block w-max">Upcoming Event!</span>
 
@@ -61,24 +60,17 @@ export default function Events() {
                                 md:gap-10 mx-3 md:mx-0 lg:mx-3 md:p-10 p-5"
                 >
                     {   
-                        upcoming_event &&
-                        upcoming_event.map(event => (
-                            <div
-                                key={nanoid()} 
-                                className="sm:w-72 min-[768px]:w-60 min-[980px]:w-72 rounded-2xl m-auto overflow-hidden bg-gray-300 p-3 sm:p-5 md:p-8 pb-0"
-                            >
-                                <div className="relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] rounded-b-2xl overflow-hidden">
-                                    <img src={event.image} className="aspect-square inline-block max-h-40 md:max-h-52 w-full object-fill object-center rounded-xl" alt="core image"/>
-                                </div>
-
-                                <div className="h-16 md:h-10">
-                                    <h1 className="capitalize text-center text-lg">{event.name}</h1>  
-                                    <h1 className="capitalize text-center text-sm">{event.criteria}</h1>
-                                </div>
-                            </div>
+                        upcoming_event && upcoming_event.map(currEvent => (
+                            <EventCard 
+                                key={nanoid()}
+                                name={currEvent.name}
+                                criteria={currEvent.criteria}
+                                date={currEvent.date}
+                                image={currEvent.image}
+                                link={currEvent.link}   
+                            />
                         ))
                     }
-                    
                 </div>
             </div>
 
@@ -89,24 +81,16 @@ export default function Events() {
                                 md:gap-10 mx-3 md:mx-0 lg:mx-3 md:p-10 p-5"
                 >
                     {   
-                        past_event &&
-                        past_event.map(event => (
-                                <div
-                                    key={nanoid()} 
-                                    className="sm:w-72 min-[768px]:w-60 min-[980px]:w-72 rounded-2xl m-auto overflow-hidden bg-gray-300 p-3 sm:p-5 md:p-8 pb-0"
-                                >
-                                    <div className="relative min-h-[8rem] md:min-h-[10rem] lg:min-h-[13rem] rounded-b-2xl overflow-hidden">
-                                        <img src={event.image} className="aspect-square inline-block max-h-40 md:max-h-52 w-full object-fill object-center rounded-xl" alt="core image"/>
-                                    </div>
-
-                                    <div className="h-16 md:h-10">
-                                        <h1 className="capitalize text-center text-lg">{event.name}</h1>  
-                                        <h1 className="capitalize text-center text-sm">{event.criteria}</h1>
-                                    </div>
-                                </div>
+                        past_event && past_event.map(currEvent => (
+                            <EventCard
+                                key={nanoid()}
+                                name={currEvent.name}
+                                criteria={currEvent.criteria}
+                                image={currEvent.image}
+                                link={currEvent.link}
+                            />
                         ))
                     }
-                    
                 </div>
             </div>
         </div>

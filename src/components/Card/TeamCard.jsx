@@ -6,7 +6,7 @@ export default function TeamCard(props) {
     return (
         <div
             id={props.id}
-            className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-300 overflow-hidden"
+            className="aspect-auto max-h-64 w-32 md:w-40 lg:w-52 rounded-xl mx-auto my-auto col-span-2 bg-gray-300 overflow-hidden border border-black"
         >
             <div className="linkedin-container relative min-h-[8rem] md:min-h-[10rem] overflow-hidden">
                 {/* You can add padding to the image as per your requirements */}

@@ -1,7 +1,16 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useRouteError } from "react-router-dom"
 
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied"
+
+export function ErrorElement() {
+    const error = useRouteError()
+    return (
+        <div className="flex justify-center h-screen items-center">
+            <h1 className="text-xl sm:text-2xl  md:text-4xl font-bold ">An Error occurred: {error.message}</h1>
+        </div>
+    )
+}
 
 export default function URLNotFound() {
     return (

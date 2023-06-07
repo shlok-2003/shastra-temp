@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 
-import TeamCard from "../components/team/TeamCard"
+import TeamCard from "../components/Card/TeamCard"
 
 const core_API = "https://shastra-api.onrender.com/coreMembers";
 const subcore_API = "https://shastra-api.onrender.com/subcoreMembers";

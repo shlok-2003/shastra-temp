@@ -13,11 +13,12 @@ import Team from "./pages/Team"
 import Events from "./pages/Events"
 import Learn from "./pages/Learn"
 import Contact from "./pages/Contact"
-import URLNotFound from "./pages/URLNotFound"
+import URLNotFound, { ErrorElement } from "./pages/URLNotFound"
+
 import "./index.css"
 
 const router = createBrowserRouter(createRoutesFromChildren(
-    <Route path="/" element={<MainLayout />} errorElement={<URLNotFound />} >
+    <Route path="/" element={<MainLayout />} errorElement={<ErrorElement />} >
       <Route index element={<Home />} />
       <Route path="team" element={<Team />} />
       <Route path="events" element={<Events />} /> 

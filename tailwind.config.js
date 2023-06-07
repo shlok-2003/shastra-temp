@@ -7,13 +7,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    // screens: {
-    //   'sm': '300px',
-    //   'md': '1024px',
-    //   'lg': '1280px',
-    // },
-    
+  theme: {    
     extend: {
       fontFamily: {
         'Ubuntu': ['Ubuntu']
@@ -24,6 +18,15 @@ export default {
         'pri-orange': '#FF9201',
         'pri-blue': '#030B98',
         'pri-blueDark': '#040a6e',
+      },
+      keyframes: {
+        fall: {
+          '0%, 100%': { transform: 'translateY(-25%)' },
+          '50%': { transform: 'translateY(-20%)' },
+        }
+      },
+      animation: {
+        fall: 'fall 1s ease-in-out infinite',
       }
     },
   },

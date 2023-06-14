@@ -5,7 +5,6 @@ import { Navigation } from "swiper"
 
 import "swiper/css"
 import "swiper/css/navigation"
-import "../../../css/LearnSwiper.css"
 
 export default function Articles({articles, handleClick}) {
     const breakpoints = {

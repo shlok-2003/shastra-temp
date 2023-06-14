@@ -6,7 +6,6 @@ import { Grid, Navigation,Pagination } from "swiper"
 
 import "swiper/css"
 import "swiper/css/grid"
-import "../../../css/LearnSwiper.css"
 
 export default function TipsTrick({tips, handleClick}) {
     const breakpoints = {

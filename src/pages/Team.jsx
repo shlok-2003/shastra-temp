@@ -3,34 +3,52 @@ import { nanoid } from "nanoid"
 
 import TeamCard from "../components/Card/TeamCard"
 
-const core_API = "https://shastra-api.onrender.com/coreMembers";
-const subcore_API = "https://shastra-api.onrender.com/subcoreMembers";
+const core_API = "http://localhost:1337/api/cores";
+// const subcore_API = "https://shastra-api.onrender.com/subcoreMembers";
+const subcore_API = "http://localhost:1337/api/sub-cores";
+
 
 export default function Team() {
     const [core, setCore] = useState([])
     const [subCore, setSubCore] = useState([])
 
-    const fetchTeam = async(url, setTeam) => {
+    // const fetchTeam = async(url, setTeam) => {
+    //     try {
+    //         const res = await fetch(url, {
+    //             method: "GET",
+    //             crossDomain: true,
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Accept: "application/json",
+    //                 "Access-Control-Allow-Origin": ""
+    //             }
+    //         });
+    //         const data = await res.json()
+    //         console.log(data)
+    //         if(data.length > 0){
+    //             setTeam(data.data)
+    //         } else {
+    //             throw new console.error("No data found")
+    //         }
+    //     } catch (error) {
+    //         throw new console.error(error)
+    //     }
+    // }
+
+    const fetchTeam = async (url, setTeam) => {
         try {
-            const res = await fetch(url, {
-                method: "GET",
-                crossDomain: true,
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                    "Access-Control-Allow-Origin": "*"
-                }
-            });
-            const data = await res.json()
-            if(data.length > 0){
-                setTeam(data)
-            } else {
-                throw new console.error("No data found")
-            }
+          const res = await fetch(url);
+          const data = await res.json();
+          if (data.data.length > 0) {
+            setTeam(data.data);
+            console.log("subcore", subCore)
+          } else {
+            throw new Error("No data found");
+          }
         } catch (error) {
-            throw new console.error(error)
+          console.error(error);
         }
-    }
+      };
 
     useEffect(() => {
         fetchTeam(core_API, setCore);
@@ -52,10 +70,10 @@ export default function Team() {
                             <TeamCard 
                                 key={nanoid()}
                                 id={member.id}
-                                image={member.image}
-                                name={member.name}
-                                designation={member.designation}
-                                linkedin={member.linkedin}
+                                image={member.attributes.Image}
+                                name={member.attributes.Name}
+                                designation={member.attributes.Designation}
+                                linkedin={member.attributes.LinkedIn}
                             />
                         ))
                     }
@@ -73,10 +91,10 @@ export default function Team() {
                             <TeamCard 
                                 key={nanoid()}
                                 id={member.id}
-                                image={member.image}
-                                name={member.name}
-                                designation={member.designation}
-                                linkedin={member.linkedin}
+                                image={member.attributes.Image}
+                                name={member.attributes.Name}
+                                designation={member.attributes.Designation}
+                                linkedin={member.attributes.LinkedIn}
                             />
                         ))
                     }

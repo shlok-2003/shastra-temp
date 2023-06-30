@@ -9,25 +9,45 @@ import Hackathon from "../assets/events/hackathon.jpg"
 import Gaming from "../assets/events/gaming.jpg"
 import HackaWack from "../assets/events/hackawack.jpg"
 
+const pastEvents = "http://localhost:1337/api/past-events";
+const UpcomingEvents = "http://localhost:1337/api/upcoming-events";
+
 export default function Events() {
     const [upcoming_event, setUpcoming_Event] = useState(null)
     const [past_event, setPast_Event] = useState(null)
 
-    useEffect(() => {
-        setUpcoming_Event([
-            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
-            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
-            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
-        ])
+    const fetchEvent = async (url, setEvent) => {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          if (data.data.length > 0) {
+            setEvent(data.data);
+          } else {
+            throw new Error("No data found");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
 
-        setPast_Event([
-            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-            { "name":"Four", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-            { "name":"Five", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-            { "name":"Six", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-        ])
+
+    useEffect(() => {
+        // setUpcoming_Event([
+        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
+        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
+        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
+        // ])
+
+        // setPast_Event([
+        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
+        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
+        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
+        //     { "name":"Four", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
+        //     { "name":"Five", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
+        //     { "name":"Six", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
+        // ])
+        fetchEvent(UpcomingEvents, setUpcoming_Event)
+        fetchEvent(pastEvents, setPast_Event)
     }, [])
 
     return (
@@ -63,11 +83,11 @@ export default function Events() {
                         upcoming_event && upcoming_event.map(currEvent => (
                             <EventCard 
                                 key={nanoid()}
-                                name={currEvent.name}
-                                criteria={currEvent.criteria}
-                                date={currEvent.date}
-                                image={currEvent.image}
-                                link={currEvent.link}   
+                                name={currEvent.attributes.Name}
+                                criteria={currEvent.attributes.Criteria}
+                                date={currEvent.attributes.Date}
+                                image={currEvent.attributes.Image}
+                                link={currEvent.attributes.Link}   
                             />
                         ))
                     }
@@ -84,10 +104,10 @@ export default function Events() {
                         past_event && past_event.map(currEvent => (
                             <EventCard
                                 key={nanoid()}
-                                name={currEvent.name}
-                                criteria={currEvent.criteria}
-                                image={currEvent.image}
-                                link={currEvent.link}
+                                name={currEvent.attributes.Name}
+                                criteria={currEvent.attributes.Criteria}
+                                image={currEvent.attributes.Image}
+                                link={currEvent.attributes.Link}
                             />
                         ))
                     }

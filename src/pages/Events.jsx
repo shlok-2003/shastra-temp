@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 
 import EventCard from "../components/Card/EventCard"
@@ -9,26 +9,69 @@ import Hackathon from "../assets/events/hackathon.jpg"
 import Gaming from "../assets/events/gaming.jpg"
 import HackaWack from "../assets/events/hackawack.jpg"
 
+const imageArr = [Hackathon, Gaming, HackaWack]
+
+const pastEvents = "https://alston-shastra-apis.onrender.com/api/past-events";
+const UpcomingEvents = "https://alston-shastra-apis.onrender.com/api/upcoming-events";
+
 export default function Events() {
-    const [upcoming_event, setUpcoming_Event] = useState(null)
-    const [past_event, setPast_Event] = useState(null)
+    const [upcoming_event, setUpcoming_Event] = useState([])
+    const [past_event, setPast_Event] = useState([])
+
+    const fetchEvent = async (url, setEvent) => {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          if (data.data.length > 0) {
+            setEvent(data.data);
+          } else {
+            throw new Error("No data found");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
 
     useEffect(() => {
-        setUpcoming_Event([
-            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
-            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
-            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
-        ])
+        // setUpcoming_Event([
+        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com", "date":"2021-10-10"},
+        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com", "date":"2021-10-10" },
+        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com", "date":"2021-10-10"},
+        // ])
 
-        setPast_Event([
-            { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-            { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-            { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-            { "name":"Four", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
-            { "name":"Five", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
-            { "name":"Six", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
-        ])
+        // setPast_Event([
+        //     { "name":"One", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
+        //     { "name":"Two", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
+        //     { "name":"Three", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
+        //     { "name":"Four", "criteria":"All", "image":Hackathon, "link":"https://www.google.com" },
+        //     { "name":"Five", "criteria":"All", "image":Gaming, "link":"https://www.google.com" },
+        //     { "name":"Six", "criteria":"All", "image":HackaWack, "link":"https://www.google.com" },
+        // ])
+        fetchEvent(UpcomingEvents, setUpcoming_Event)
+        fetchEvent(pastEvents, setPast_Event)
     }, [])
+
+    // Example: 2023-03-31T19:00:00+05:30 --> 31-03-2023
+    function convertToDate(apiDate) {
+        let timestamp = new Date(apiDate).getTime();
+        let dateObj = new Date(timestamp);
+        let day = dateObj.getDate().toString().padStart(2, 0);
+        let month = (dateObj.getMonth() + 1).toString().padStart(2, 0);
+        let year = dateObj.getFullYear();
+        let eventDate = `${day}-${month}-${year}`;
+        return eventDate;
+    }
+
+    // Example: 2023-03-31T19:00:00+05:30 --> 19:00
+    function convertToTime(apiDate) {
+        let timestamp = new Date(apiDate).getTime();
+        let dateObj = new Date(timestamp);
+        let hours = dateObj.getHours().toString().padStart(2, 0);
+        let minutes = dateObj.getMinutes().toString().padStart(2,0);
+        let eventTime = `${hours}:${minutes}`;
+        return eventTime;
+    }
 
     return (
         <div className="relative z-10 min-h-[100%]">
@@ -53,6 +96,7 @@ export default function Events() {
                 </div>
             </div>
 
+            {!(upcoming_event.length) ? <span className="capitalize font-bold ml-2 md:ml-16 text-xl md:text-3xl inline-block w-max">No Upcoming Events!</span> : 
             <div className="flex flex-col my-16">
                 <span className="capitalize font-bold ml-2 md:ml-16 text-xl md:text-3xl inline-block w-max">Upcoming Event!</span>
 
@@ -63,16 +107,16 @@ export default function Events() {
                         upcoming_event && upcoming_event.map(currEvent => (
                             <EventCard 
                                 key={nanoid()}
-                                name={currEvent.name}
-                                criteria={currEvent.criteria}
-                                date={currEvent.date}
-                                image={currEvent.image}
-                                link={currEvent.link}   
+                                name={currEvent.attributes.name}
+                                criteria="All"
+                                date={convertToDate(currEvent.attributes.startTime) + " " + convertToTime(currEvent.attributes.startTime)}
+                                image={imageArr[Math.floor(Math.random()*imageArr.length)]}
+                                link={currEvent.attributes.contestLink}   
                             />
                         ))
                     }
                 </div>
-            </div>
+            </div> }
 
             <div className="flex flex-col my-16">
                 <span className="capitalize font-bold ml-2 md:ml-16 text-xl md:text-3xl inline-block w-max">Past Event!</span>
@@ -84,10 +128,12 @@ export default function Events() {
                         past_event && past_event.map(currEvent => (
                             <EventCard
                                 key={nanoid()}
-                                name={currEvent.name}
-                                criteria={currEvent.criteria}
-                                image={currEvent.image}
-                                link={currEvent.link}
+                                id={currEvent.id}
+                                name={currEvent.attributes.name}
+                                criteria="All"
+                                date={convertToDate(currEvent.attributes.startTime) + " " + convertToTime(currEvent.attributes.startTime)}
+                                image={imageArr[Math.floor(Math.random()*imageArr.length)]}
+                                link={currEvent.attributes.contestLink} 
                             />
                         ))
                     }
